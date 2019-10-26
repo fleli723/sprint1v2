@@ -3,7 +3,7 @@
 require_once("../classes/Template.php");
 
 $page = new Template("Search Page");
-$page->addHeadElement('<script src="../js/jsFormValidator.js"></script>');
+$page->addHeadElement('<script src="../js/validateUserSearch.js"></script>');
 $page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">');
 $page->finalizeTopSection();
 $page->finalizeBottomSection();

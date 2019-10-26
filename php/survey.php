@@ -5,7 +5,7 @@ require_once("const.php");
 
 $page = new Template("Survey Page");
 $page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">');
-$page->addHeadElement("<script src='jsFormValidator.js'></script>");
+$page->addHeadElement("<script src='../js/jsFormValidator.js'></script>");
 $page->finalizeTopSection();
 $page->finalizeBottomSection();
 
@@ -26,9 +26,10 @@ print 	'<div class="topbar">
 //ADD CODE TO TAKE USER INPUT AND PUT INTO NEW DB TABLE
 print	'
 <div class="content">		
-	<form name="survey" onsubmit="return validateForm();" action="action.php" method="post">
+	<form name="survey" onsubmit="return validateForm()" action="action.php" method="post">
 	
 		<div class="formboxes">
+		
 			<span>Email:</span><br><br>
 			<input type="text" id="email" name="email" placeholder="Enter a valid Email">
 			<br>
