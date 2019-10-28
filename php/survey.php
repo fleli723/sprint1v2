@@ -37,12 +37,12 @@ print	'
 		
 		<div class="formboxes">
 			<span>What is your major?</span><br><br>
-			<input type="checkbox" name="major" value="CIS-AppDev"> CIS-AppDev<br>
-			<input type="checkbox" name="major" value="CIS-Networking"> CIS-Networking<br>
-			<input type="checkbox" name="major" value="WDMD"> WDMD<br>
-			<input type="checkbox" name="major" value="WD"> WD<br>
-			<input type="checkbox" name="major" value="HTI"> HTI<br>
-			<input type="checkbox" name="major" value="Other"> Other<br>
+			<input type="checkbox" name="major"  id = "major1" value="CIS-AppDev"> CIS-AppDev<br>
+			<input type="checkbox" name="major" id = "major2" value="CIS-Networking"> CIS-Networking<br>
+			<input type="checkbox" name="major" id = "major3" value="WDMD"> WDMD<br>
+			<input type="checkbox" name="major" id = "major4" value="WD"> WD<br>
+			<input type="checkbox" name="major" id = "major5" value="HTI"> HTI<br>
+			<input type="checkbox" name="major" id = "major6" value="Other"> Other<br>
 		</div>
 			
 		<div class="formboxes">

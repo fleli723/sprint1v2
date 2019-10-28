@@ -24,7 +24,7 @@ print	'
 
 print	'
 <div class="content">
-	<form name="userSearchBarForm" onsubmit="return ValidateUserSearch()" action="result.php" method="post">
+	<form name="userSearchBarForm"  action="result.php" method="post">
 	
 		<div class="formboxes">
 			<span>Search: </span><br><br>
@@ -33,7 +33,7 @@ print	'
 		</div>
 			
 		<br>	
-		<input class="button" type="submit" value="Submit" id="Btnsubmit">
+		<input class="button" type="submit" value="Submit" id="Btnsubmit" onsubmit="return ValidateUserSearch;">
 		
 	</form>
 </div>	

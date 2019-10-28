@@ -3,13 +3,15 @@
 require_once("../classes/Template.php");
 require_once("const.php");
 
+
 $page = new Template("Action Page");
 $page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">');
 $page->finalizeTopSection();
 $page->finalizeBottomSection();
 
 print $page->getTopSection();
-
+extract($_POST);
+print_r($_POST);
 print 	'<div class="topbar">
 			<h1> CNMT 310 Sprint 1 Assignment</h1>
 			<ul class="nav">
@@ -20,23 +22,23 @@ print 	'<div class="topbar">
 			</ul>
 		</div>';
 		
-				//change this information to const.php
-				$localhost = "cnmtsrv1.uwsp.edu";
-				$username = "bubla_t_admin";
-				$password = "xew56baz";
-				$dbname = "bubla_t";
-				$con = new mysqli($localhost, $username, $password, $dbname);
-				//change this information to const.php
+				
+				
+				
+				
+				
+				
+				
 
 				if( $con->connect_error){
 				die('Error: ' . $con->connect_error);} 
 				$sql = "SELECT * FROM albums";
 				
 				//TABLE PRINTS ALL RESULTS, CHECK WHY
-				if( isset($_GET['search']) ){
-					$results = mysqli_real_escape_string($con, htmlspecialchars($_GET['search']));
+				if( isset($_POST['Search_Bar_Name']) ){
+					$results = mysqli_real_escape_string($con, htmlspecialchars($_POST['Search_Bar_Name']));
 					$sql = "SELECT * FROM albums 
-					WHERE albumArtist LIKE '%$results%' or AlbumTitle LIKE '%$results%'";
+					WHERE albums.albumArtist LIKE '%$results%' or albums.AlbumTitle LIKE '%$results%'";
 				}//end if
 				$result = $con->query($sql);
 				

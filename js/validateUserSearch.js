@@ -30,7 +30,7 @@ let ValidateUserSearch = function() {
 
     if (has_User_Entered_A_Search) {
 		
-        window.location.href = "../views/searchResults.php";
+        window.location.href = "../php/result.php";
     }
 
 }//end validateForm function
