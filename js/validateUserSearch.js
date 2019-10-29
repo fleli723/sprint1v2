@@ -75,6 +75,10 @@ let ValidateUserSearch = function($Search_Bar_Name) {
     /* if (has_User_Entered_A_Search) {
 		
         window.location.href = "../php/result.php";
+<<<<<<< HEAD
     } */
+=======
+    }
+>>>>>>> c30aecd01e1af732c638b99b7d9f5e6bb70b8fed
 
 }//end validateForm function */

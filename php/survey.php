@@ -30,12 +30,21 @@ print	'
 		
 		<div class="formboxes" id="Majors">
 			<span>What is your major?</span><br><br>
+<<<<<<< HEAD
 			<input type="checkbox" id="chkMajor1" name="major[0]" value="CIS-AppDev"> CIS-AppDev<br>
 			<input type="checkbox" id="chkMajor2" name="major[1]" value="CIS-Networking"> CIS-Networking<br>
 			<input type="checkbox" id="chkMajor3" name="major[2]" value="WDMD"> WDMD<br>
 			<input type="checkbox" id="chkMajor4" name="major[3]" value="WD"> WD<br>
 			<input type="checkbox" id="chkMajor5" name="major[4]" value="HTI"> HTI<br>
 			<input type="checkbox" id="chkMajor6" name="major[5]" value="Other"> Other<br>
+=======
+			<input type="checkbox" name="major"  id = "major1" value="CIS-AppDev"> CIS-AppDev<br>
+			<input type="checkbox" name="major" id = "major2" value="CIS-Networking"> CIS-Networking<br>
+			<input type="checkbox" name="major" id = "major3" value="WDMD"> WDMD<br>
+			<input type="checkbox" name="major" id = "major4" value="WD"> WD<br>
+			<input type="checkbox" name="major" id = "major5" value="HTI"> HTI<br>
+			<input type="checkbox" name="major" id = "major6" value="Other"> Other<br>
+>>>>>>> c30aecd01e1af732c638b99b7d9f5e6bb70b8fed
 		</div>
 			
 		<div class="formboxes">

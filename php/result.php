@@ -12,7 +12,29 @@ $page->finalizeBottomSection();
 
 print $page->getTopSection();
 extract($_POST);
+<<<<<<< HEAD
 include("topNavBar.php");
+=======
+print_r($_POST);
+print 	'<div class="topbar">
+			<h1> CNMT 310 Sprint 1 Assignment</h1>
+			<ul class="nav">
+				<li><a href="index.php">Home</a></li>		
+				<li><a href="survey.php">Survey</a></li>
+				<li><a href="privacy.php">Privacy Policy</a></li>
+				<li><a href="search.php">Search</a></li>
+			</ul>
+		</div>';
+		
+				
+				
+				
+				
+				
+				
+				
+
+>>>>>>> c30aecd01e1af732c638b99b7d9f5e6bb70b8fed
 				if( $con->connect_error){
 				die('Error: ' . $con->connect_error);} 
 				$sql = "SELECT * FROM albums";
