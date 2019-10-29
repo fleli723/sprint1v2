@@ -3,40 +3,25 @@
 require_once("../classes/Template.php");
 require_once("const.php");
 
+
 $page = new Template("Action Page");
 $page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">');
+$page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/searchResultTables.css">');
 $page->finalizeTopSection();
 $page->finalizeBottomSection();
 
 print $page->getTopSection();
-
-print 	'<div class="topbar">
-			<h1> CNMT 310 Sprint 1 Assignment</h1>
-			<ul class="nav">
-				<li><a href="index.php">Home</a></li>		
-				<li><a href="survey.php">Survey</a></li>
-				<li><a href="privacy.php">Privacy Policy</a></li>
-				<li><a href="search.php">Search</a></li>
-			</ul>
-		</div>';
-		
-				//change this information to const.php
-				$localhost = "cnmtsrv1.uwsp.edu";
-				$username = "bubla_t_admin";
-				$password = "xew56baz";
-				$dbname = "bubla_t";
-				$con = new mysqli($localhost, $username, $password, $dbname);
-				//change this information to const.php
-
+extract($_POST);
+include("topNavBar.php");
 				if( $con->connect_error){
 				die('Error: ' . $con->connect_error);} 
 				$sql = "SELECT * FROM albums";
 				
 				//TABLE PRINTS ALL RESULTS, CHECK WHY
-				if( isset($_GET['search']) ){
-					$results = mysqli_real_escape_string($con, htmlspecialchars($_GET['search']));
+				if( isset($_POST['Search_Bar_Name']) ){
+					$results = mysqli_real_escape_string($con, htmlspecialchars($_POST['Search_Bar_Name']));
 					$sql = "SELECT * FROM albums 
-					WHERE albumArtist LIKE '%$results%' or AlbumTitle LIKE '%$results%'";
+					WHERE albums.albumArtist LIKE '%$results%' or albums.AlbumTitle LIKE '%$results%'";
 				}//end if
 				$result = $con->query($sql);
 				
@@ -46,9 +31,11 @@ print 	'<div class="topbar">
 				<caption><h2>Search Results:</h2></caption>
 				<thead>
 				<tr>
-					<th>ID#</th>
-					<th>Album Artist</th>
-					<th>Album Title</th>
+					<th class = "r1">ID#</th>
+					<th class = "r2">Album Artist</th>
+					<th class = "r3">Album Title</th>
+					<th class = "r4">Album Duration</th>
+					
 				</tr>
 				</thead><tbody>
 				<tbody>';
@@ -56,9 +43,10 @@ print 	'<div class="topbar">
 				while($row = $result->fetch_assoc()){
 					
 				print '<tr>
-					<td width="75px">';echo $row["albumId"];              print '</td>';
-					print ' <td width="200px">';echo $row["albumArtist"]; print'</td>';
-					print ' <td width="300px">';echo $row["albumTitle"];  print' </td>';
+					<td class = "r1">';echo $row["albumId"];              print '</td>';
+					print ' <td class = "r2">';echo $row["albumArtist"]; print'</td>';
+					print ' <td class = "r3">';echo $row["albumTitle"];  print' </td>';
+					print ' <td class = "r4">';echo $row["duration"];  print' </td>';
 					print' </tr>';
 				
 				}
