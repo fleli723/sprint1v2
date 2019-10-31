@@ -19,7 +19,7 @@ include("topNavBar.php");
 //ADD CODE TO TAKE USER INPUT AND PUT INTO NEW DB TABLE
 print	'
 <div class="content">		
-	<form name="survey" action="action.php" method="post">
+	<form name="survey" action="surveyResult.php" method="post">
 	
 		<div class="formboxes">
 		

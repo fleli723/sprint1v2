@@ -26,7 +26,7 @@ print	'
 
 print	'
 <div class="content">
-	<form name="userSearchBarForm" action="result.php"  method="post">
+	<form name="userSearchBarForm" action="searchResult.php"  method="post">
 	
 		<div class="formboxes">
 			<span>Search: </span><br><br>
