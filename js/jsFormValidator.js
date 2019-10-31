@@ -1,3 +1,4 @@
+
 var $ = function(id) {	return document.getElementById(id);	}//end $
 //Code To validate the Survey Form 
 
@@ -9,34 +10,35 @@ let validateForm = function() {
     let hasPizzaTopping = false;
 
     //Checking email
-    //let email = document.forms["survey"]["email"].value;
-	let email = $("email");
+    let email = document.forms["survey"]["email"].value;
+	//let email = $("email");
 
     if (email == "") {
-        alert("Email must be filled out Pretty Please");
+        alert("Email must be filled out");
         return false;
     } else {
         hasEmail = true;
     }
 
     //Checking major 
-    /* let major = document.forms["survey"]["major"];
-
-    for (let i = 0; i < major.length; i++) {
-        if (major[i].checked) {
-            hasMajor = true;
-        }
-    }
-    if (hasMajor == false) {
-        alert("You must declare a major");
-        return false;
-    } */
+    //let major = document.forms["survey"]["Majors"];
+	//
+    //for (let i = 0; i < Majors.length; i++) {
+    //    if (Majors[i].checked) {
+    //        hasMajor = true;
+    //    }
+    //}
+    //if (hasMajor == false) {
+    //    alert("You must declare a major");
+    //    return false;
+    //} 
 	
 	/* This function validates if the user selected at least one checkbox. */
 
-   /*  var err = $('errMajor');
-	var checked = 0;
-	//function GetSelected() {
+    
+	
+	
+		var checked = 0;
         //Create an Array.
         var selected = new Array();
  
@@ -49,16 +51,13 @@ let validateForm = function() {
         // Loop and push the checked CheckBox value in Array.
         for (var i = 0; i < chks.length; i++) {
             if (chks[i].checked) {
-                checked++;
+                hasMajor = true;
             }//endif
         }//endfor
-		if (checked == 0) {
-			alert("You must select at least one major.");
-			return false;
-		}else{
-			hasMajor = true;
-		}//endif */
-
+		if (hasMajor == false) {
+			alert("You must declare a major");
+		}//endif 
+	
 
     //Checking grade
     let grade = document.forms["survey"]["grade"];

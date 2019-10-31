@@ -2,6 +2,7 @@
 
 require_once("../classes/DB.class.php");
 require_once("../classes/Template.php");
+require_once("../classes/validateSurvey.php");
 
 $page = new Template("Survey Page");
 $page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">');
@@ -15,8 +16,7 @@ print $page->getTopSection();
 include("topNavBar.php");
 	
 
-//ADD VALIDATION FOR INPUTS
-//ADD CODE TO TAKE USER INPUT AND PUT INTO NEW DB TABLE
+
 print	'
 <div class="content">		
 	<form name="survey" action="surveyResult.php" method="post">
