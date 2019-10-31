@@ -1,7 +1,7 @@
 <?php
 
+require_once("../classes/DB.class.php");
 require_once("../classes/Template.php");
-require_once("const.php");
 
 $page = new Template("Survey Page");
 $page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">');
