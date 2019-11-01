@@ -10,11 +10,10 @@
 * 20190926 - Original code constructed                          *
 * 20191031 - included the DB Class, connection error checking,  *
 *            sanitization, Isset search variable                *
+* 20191101 - Added Session Variables                            *
 *                                                               *
 ****************************************************************/
-require_once("../classes/validateSurvey.php)";
-$errors = validateSurvey();
-	
+session_start();
 require_once("../classes/DB.class.php");
 require_once("../classes/Template.php");
 $page = new Template("Survey Results Page");
@@ -22,21 +21,22 @@ $page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/style
 $page->finalizeTopSection();
 $page->finalizeBottomSection();
 print $page->getTopSection();
+//convert the session variables to a $_POST
+foreach ($_SESSION as $key => $value) {
+			${$key} = $value;
+			$_POST[$key] = $value;
+		}//end if
+session_destroy(); //destroys the Session
 extract($_POST); //needed to extract the $_POST for the checkbox consistency check to boolean values
 include("topNavBar.php");
-$errors = validateSurvey();
-
-if ($errors == 0) {
 	if(isset($_POST['email'])) { //and the email variable is set
 		//New datbase connection
-		
 			$con = new DB(); 
 		//Check the connection
 			if (!$con->getConnStatus()) {
 			  print "\n\nAn error has occurred with connection\n";
 			  exit;
 			}else{
-				
 				//Consistency check for the major checboxes
 					$major1 = (isset($major[0])) ? 1 : 0;				
 					$major2 = (isset($major[1])) ? 1 : 0;
@@ -85,12 +85,4 @@ if ($errors == 0) {
 			}// end if
 	}// end isset				
 	print $page->getBottomSection();
-}
-else 
-{
-	print '<p>The form was not filled out properly<br>Please try again</p>
-	<form><input class="button" type="submit" value="Submit" action="survey.php"></form>';
-	print $page->getBottomSection();
-}
-
 ?>

@@ -1,28 +1,39 @@
 <?php
-
+/****************************************************************
+* This class is used to enter the users survey input data.      *
+* The form is validated with Javascript (if available on the    *
+* client) and also self-validates with a separate validation    *
+* function from the class folder.                               *
+*                                                               *
+* @author Tim, Filip and Corbin                                 *
+* @FileName: survey.php                                  *
+*                                                               *
+* Changelog:                                                    *
+* 20190926 - Original code constructed                          *
+* 20191031 - Updated code and removed php echo/error markers    *
+* 20191101 - Added php class form validation                    *
+*                                                               *
+****************************************************************/
+//Set Session
+$lifetime = 60 * 60 * 2;
+session_set_cookie_params($lifetime,'/');
+session_start();
 require_once("../classes/DB.class.php");
+require_once("../classes/surveyValidation.php");
 require_once("../classes/Template.php");
-require_once("../classes/validateSurvey.php");
-
 $page = new Template("Survey Page");
 $page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">');
 //$page->addHeadElement("<script src='../js/jsFormValidator.js'></script>");
 //$page->addHeadElement("<script src='../js/survey.js'></script>");
 $page->finalizeTopSection();
 $page->finalizeBottomSection();
-
 print $page->getTopSection();
-
 include("topNavBar.php");
-	
-
-
+validateSurvey(); //calls the surveyValidation function to validate form if client JavaScript is unavailable
 print	'
 <div class="content">		
-	<form name="survey" action="surveyResult.php" method="post">
-	
+	<form name="survey" action="'; echo htmlspecialchars($_SERVER["PHP_SELF"]);print '" method="post">
 		<div class="formboxes">
-		
 			<span>Email:</span><br><br>
 			<input type="text" id="txtEmail" name="email" placeholder="Enter a valid Email">
 			<br>
@@ -61,9 +72,6 @@ print	'
 		<input class="button" type="submit" value="Submit" onsubmit="return validateForm()">
 			
 	</form>
-		
 </div>';
-
 print $page->getBottomSection();
-
 ?>
