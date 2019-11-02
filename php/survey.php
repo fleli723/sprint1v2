@@ -4,9 +4,9 @@
 * The form is validated with Javascript (if available on the    *
 * client) and also self-validates with a separate validation    *
 * function from the class folder.                               *
-*                                                                *
+*                                                               *
 * @author Tim, Filip and Corbin                                 *
-* @FileName: survey.php                                  *
+* @FileName: survey.php                                         *
 *                                                               *
 * Changelog:                                                    *
 * 20190926 - Original code constructed                          *
@@ -23,7 +23,7 @@ require_once("../classes/surveyFunctions.php");
 require_once("../classes/Template.php");
 $page = new Template("Survey Page");
 $page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">');
-//$page->addHeadElement("<script src='../js/jsFormValidator.js'></script>");
+$page->addHeadElement("<script src='../js/jsFormValidator.js'></script>");
 //$page->addHeadElement("<script src='../js/survey.js'></script>");
 $page->finalizeTopSection();
 $page->finalizeBottomSection();

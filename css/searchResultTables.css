@@ -1,9 +1,10 @@
 table {
     width:575px;
 	font-size: 12px;
+	font-family: verdana;
 } 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #1b455e;
     border-collapse: collapse;
 }
 th, td {
@@ -11,10 +12,11 @@ th, td {
     text-align: left;
 }
 table#t01 tr:nth-child(even) {
-    background-color: #bbb;
+    background-color: #327ba8;
+	color: white;
 }
 table#t01 tr:nth-child(odd) {
-   background-color:#fff;
+   background-color:#ffffff;
 }
 table#t01 th	{
     background-color: #444;
