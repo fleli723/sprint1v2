@@ -4,8 +4,7 @@ require_once("../classes/Template.php");
 require_once("../classes/searchValidation.php");
 
 $page = new Template("Search Page");
-$page->addHeadElement('<script src="../js/validateUserSearch2.js"></script>');
-
+$page->addHeadElement('<script src="../js/search.js"></script>');
 $page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">');
 $page->finalizeTopSection();
 $page->finalizeBottomSection();

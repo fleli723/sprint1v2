@@ -36,7 +36,7 @@ include("topNavBar.php");
 							$query = "SELECT * FROM albums WHERE albums.albumArtist LIKE '%$searchTerm%' or albums.AlbumTitle LIKE '%$searchTerm%'";
 							$result = $con->dbCall($query);
 							if (!$result) { 
-								echo "No results match your query";
+								print '<h2>No results match your query</h2>';
 							}else{
 								print '<table id="t01">
 								<caption><h2>Search Results:</h2></caption>
