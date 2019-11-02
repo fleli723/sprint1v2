@@ -1,5 +1,5 @@
 <?php
-print 	'<div class="topbar">
+print 	'<div class="topbar"> 
 			<h1> CNMT 310 Sprint 1 Assignment</h1>
 			<ul class="nav">
 				<li><a href="index.php">Home</a></li>		

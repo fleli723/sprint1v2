@@ -4,7 +4,7 @@
 * The form is validated with Javascript (if available on the    *
 * client) and also self-validates with a separate validation    *
 * function from the class folder.                               *
-*                                                               *
+*                                                                *
 * @author Tim, Filip and Corbin                                 *
 * @FileName: survey.php                                  *
 *                                                               *

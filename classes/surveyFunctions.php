@@ -1,7 +1,7 @@
 <?
 /* This function validates the user inputs on the survey form. If there are errors
 then the user is shown a alert box with a list of the form errors. If there are no 
-errors then the form is submitted and the Survey Results page is shown. */
+errors then the form is submitted and the Survey Results page is shown.  */
 function validateSurvey() {
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$errors = array();  //sets our survey errors to an array

@@ -3,7 +3,7 @@
 * This class is used to connect to the db and Insert the        *
 * survey results into the DB for CNMT-310 Sprint 1              *
 *                                                               *
-* @author Tim, Filip and Corbin                                 *
+* @author Tim, Filip and Corbin                                 * 
 * @FileName: surveyResults.php                                  *
 *                                                               *
 * Changelog:                                                    *

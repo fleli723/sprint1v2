@@ -1,7 +1,7 @@
 
 var $ = function(id) {	return document.getElementById(id);	}//end $
 //Code To validate the Survey Form 
-
+ 
 let validateForm = function() {
     event.preventDefault();
     let hasEmail = false;

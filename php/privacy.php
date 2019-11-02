@@ -1,5 +1,5 @@
 <?php
-
+ 
 require_once("../classes/Template.php");
 
 $page = new Template("Privacy Page");

@@ -1,5 +1,5 @@
 <?php
-
+ 
 require_once("../classes/Template.php");
 require_once("../classes/searchValidation.php");
 

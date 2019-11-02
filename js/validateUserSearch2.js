@@ -2,7 +2,7 @@ var $ = function(id) {	return document.getElementById(id);	}//end $
 window.onload = function() {	
 	$("txtSearchBar").focus();//Gives the search field the FOCUS on load			 
 }//end window.onload
-
+ 
 /*validateSearch will validate the search bar */
 function validateSearch() {	   
 	var ptr = $("txtSearchBar");
