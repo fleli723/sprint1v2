@@ -56,31 +56,57 @@ include("topNavBar.php");
 					$insertTime = date_create()->format('Y-m-d H:i:s');					
 				//Sanitize the user input 
 					$emailS = $con->dbESC($_POST['email']);
-					$emailS = filter_var($emailS, FILTER_SANITIZE_EMAIL);
-					$major1S = $con->dbESC($major1);					
+					$emailSafe = filter_var($emailS, FILTER_SANITIZE_EMAIL);
+					$major1S = $con->dbESC($major1);
+					$major1Safe = filter_var($major1S, FILTER_SANITIZE_STRING);
 					$major2S = $con->dbESC($major2);
+					$major2Safe = filter_var($major2S, FILTER_SANITIZE_STRING);
 					$major3S = $con->dbESC($major3);
+					$major3Safe = filter_var($major3S, FILTER_SANITIZE_STRING);
 					$major4S = $con->dbESC($major4);
+					$major4Safe = filter_var($major4S, FILTER_SANITIZE_STRING);
 					$major5S = $con->dbESC($major5);
+					$major5Safe = filter_var($major5S, FILTER_SANITIZE_STRING);
 					$major6S = $con->dbESC($major6);
+					$major6Safe = filter_var($major6S, FILTER_SANITIZE_STRING);
 					$gradeS = $con->dbESC($_POST['grade']);
+					$gradeSafe = filter_var($gradeS, FILTER_SANITIZE_STRING);
 					$pizzaToppingS = $con->dbESC($_POST['pizzaTopping']);
+					$pizzaToppingSafe = filter_var($pizzaTopping, FILTER_SANITIZE_STRING);
 					$clientIPS = $con->dbESC($clientIP);
-					$clientIPS =filter_var($clientIPS, FILTER_VALIDATE_IP);
-					$insertTimeS = $con->dbESC($insertTime);
+					$clientIPSafe =filter_var($clientIPS, FILTER_VALIDATE_IP);
+					$insertTimeSafe = $con->dbESC($insertTime);
 				//Insert Record into the DB	
 					$query = "INSERT into surveys (email, major1, major2, major3, major4, major5, major6, grade, pizzaTopping, insertTime, clientIP) 
-						VALUES ('{$emailS}', '{$major1S}', '{$major2S}', '{$major3S}', '{$major4S}', '{$major5S}', '{$major6S}', '{$gradeS}', '{$pizzaToppingS}', '{$insertTime}', '{$clientIPS}')";
+						VALUES ('{$emailSafe}', '{$major1Safe}', '{$major2Safe}', '{$major3Safe}', '{$major4Safe}', '{$major5Safe}', '{$major6Safe}', '{$gradeSafe}', '{$pizzaToppingSafe}', '{$insertTimeSafe}', '{$clientIPSafe}')";
 					$result = $con->dbCall($query);
 				//Check for DB Insert Errors
 					if (!$result) {
 					  print 'There was an Error processing your survey<br>Please contact the Website Admin';
 					}else{
 					  print	'<div class="content">
-								<h3 class="action"> Thank you for submitting your survey answers! </h3><br>
-								1 record successfully submitted. 
+						<h3 class="action"> Thank you for submitting your survey answers! </h3>
+						<h4>Your email address is: "'; print $email; print '"</h4>';
+							if (count($major) == 1) {
+								print '<h4>Your major is: "';
+							}else{
+								print '<h4>Your majors are: "';
+							}//end if
+							$last = count($major) - 1;
+							foreach($major as $index => $value) {
+								if($index == $last) {
+									echo $value . '.';
+								}else{
+									echo $value . ', ';
+								}//end if
+							}//end foreach
+							print'</h4>
+							<h4>You expect to earn a "'; print $grade; print '" in your CNMT-310 Class.</h4>
+							<h4>"'; print $pizzaTopping; print '" is your favorite Pizza Topping.</h4><hr><br>
+							1 record successfully submitted.<br><br><h4>Click Survey on the menu bar to complete another survey.</h4>								
 							</div>';
 					  $result = false;//Reset result when done with it to prevent interfering with later calls.
+					  unset($_POST); //removes the values of $_POST so the user can submit another survey
 					}//end if
 			}// end if
 	}// end isset				

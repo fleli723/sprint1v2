@@ -19,7 +19,7 @@ $lifetime = 60 * 60 * 2;
 session_set_cookie_params($lifetime,'/');
 session_start();
 require_once("../classes/DB.class.php");
-require_once("../classes/surveyValidation.php");
+require_once("../classes/surveyFunctions.php");
 require_once("../classes/Template.php");
 $page = new Template("Survey Page");
 $page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">');
