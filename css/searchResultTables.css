@@ -12,14 +12,13 @@ th, td {
     text-align: left;
 }
 table#t01 tr:nth-child(even) {
-    background-color: #327ba8;
-	color: white;
+    background-color: #aed4eb;
 }
 table#t01 tr:nth-child(odd) {
    background-color:#ffffff;
 }
 table#t01 th	{
-    background-color: #444;
+    background-color: #1b455e;
     color: white;
 }
 
