@@ -35,7 +35,7 @@ include("topNavBar.php");
 		if(($_POST['email'])=="") {
 			$errors['email']= "PHP - E-mail Address is a required field.";
 		}elseif(!filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
-			$errors['email']= "PHP - Enter a valid email address i.e  johnsmith@sample.com";
+			$errors['email']= "PHP - Enter a valid email address";
 		}//end if
 		
 		//Validate the Major checkboxes
