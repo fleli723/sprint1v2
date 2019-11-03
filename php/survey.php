@@ -19,7 +19,6 @@ $lifetime = 60 * 60 * 2;
 session_set_cookie_params($lifetime,'/');
 session_start();
 require_once("../classes/DB.class.php");
-require_once("../classes/surveyFunctions.php");
 require_once("../classes/Template.php");
 $page = new Template("Survey Page");
 $page->addHeadElement('<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">');
@@ -65,7 +64,7 @@ include("topNavBar.php");
 			exit();
 		}else{
 			//Show an alert box with a list of errors so the user can make corrections.
-			echo '<script>alert("'.implode("\\n", $errors).'");</script>';
+			echo '<script>alert(" '.implode("\\n", $errors).' ");</script>';
 		}//endif
 	}//end if
 
