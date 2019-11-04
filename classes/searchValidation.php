@@ -1,6 +1,6 @@
 <?php
 function validateDBSearch() {
-	extract($_REQUEST);
+	extract($_POST);
 	$errors= array();	 //All the error messages in an Array
 	
 	//Validate Major (Make sure at least one major is selected in the checkbox array.)
